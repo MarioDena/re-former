@@ -30,16 +30,13 @@
 -->
 
 
-<%= form_for @user do |f| %>
-    <%= f.label :username, "Username"%>
+<%= form_for @user, url: users_path do |f| %>
+    <%= f.label :username, "Edit Username"%>
     
     <%= f.text_field :username, placeholder: "Type username"%>
-    <%= f.label :password, "Password"%>
+    <%= f.label :password, "Edit Password"%>
     <%= f.password_field :password, placeholder: "password" %>
-    <%= f.label :email, "Email"%>
+    <%= f.label :email, "Edit Email"%>
     <%= f.email_field :email, placeholder: "you@mail.com"%>
-    <%= f.submit "Create" %>
+    <%= f.submit "Edit" %>
 <% end %>
-
-
-
