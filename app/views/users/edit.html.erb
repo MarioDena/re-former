@@ -29,13 +29,31 @@
 =end
 -->
 
+<h1>Edit User</h1>
+
+<% if @user.errors.any? %>
+  <div>
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+       prohibited this user from being saved:
+    </h2>
+    <ul>
+      <%= @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_for @user, url: user_path do |f| %>
     <%= f.label :username, "Edit Username"%>
     <%= f.text_field :username, placeholder: "Type username"%>
+    
     <%= f.label :password, "Edit Password"%>
     <%= f.password_field :password, placeholder: "password" %>
+    
     <%= f.label :email, "Edit Email"%>
     <%= f.email_field :email, placeholder: "you@mail.com"%>
+    
     <%= f.submit "Edit" %>
 <% end %>
