@@ -1,15 +1,30 @@
 #!/usr/bin/env ruby
 
 ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+<<<<<<< HEAD
 ENV["NODE_ENV"] ||= ENV["RAILS_ENV"]
+=======
+ENV["NODE_ENV"]  ||= "development"
+>>>>>>> ccc135bc0726667c6274a423b668a18fba58d71f
 
 require "pathname"
 ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
   Pathname.new(__FILE__).realpath)
 
+<<<<<<< HEAD
 require "rubygems"
+=======
+>>>>>>> ccc135bc0726667c6274a423b668a18fba58d71f
 require "bundler/setup"
 
 require "webpacker"
 require "webpacker/dev_server_runner"
+<<<<<<< HEAD
 Webpacker::DevServerRunner.run(ARGV)
+=======
+
+APP_ROOT = File.expand_path("..", __dir__)
+Dir.chdir(APP_ROOT) do
+  Webpacker::DevServerRunner.run(ARGV)
+end
+>>>>>>> ccc135bc0726667c6274a423b668a18fba58d71f
