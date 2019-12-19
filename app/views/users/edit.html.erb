@@ -1,7 +1,6 @@
-<h1>Edit User</h1>
 
 
-<!-- <form action="/users/:id/edit" accept-charset="UTF-8" method="get">
+<!-- <form action="/users/:id" accept-charset="UTF-8" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="username">Username:</label>
   <input type="text" name="user[username]" id="name">
@@ -17,7 +16,7 @@
 
 
 
-<%= form_tag("/users/:id", method: "get") do %>
+<%= form_tag("/users/:id", method: "post") do %>
 <%= label_tag(:username, "Enter Username") %>
 <%= text_field_tag(:username) %>
 <%= label_tag(:password, "Password") %>
@@ -28,23 +27,12 @@
 <% end %>
 -->
 
+<div class="form_wrap">
+  <h1>Edit User</h1>
 
+  <%= form_for @user, url: user_path do |f| %>
+    <%= render 'shared/error_messages' %>
 
-<% if @user.errors.any? %>
-  <div>
-    <h2>
-      <%= pluralize(@user.errors.count, "error") %>
-       prohibited this user from being saved:
-    </h2>
-    <ul>
-      <%= @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_for @user, url: user_path do |f| %>
     <%= f.label :username, "Edit Username"%>
     <%= f.text_field :username, placeholder: "Type username"%>
     
@@ -55,4 +43,5 @@
     <%= f.email_field :email, placeholder: "you@mail.com"%>
     
     <%= f.submit "Edit" %>
-<% end %>
+  <% end %>
+</div>
