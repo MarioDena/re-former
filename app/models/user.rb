@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-    validate :username, presence: true, uniqueness: true, length {minimum: 6}
-    validate :password, presence: true, length {minimum: 6}
-    validate :email, presence: true, uniqueness: true length {maximum: 255}
+  validates :username, presence: true, uniqueness: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }
+  validates :email, presence: true, uniqueness: true, length: { maximum: 255 }
 end

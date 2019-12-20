@@ -1,0 +1,47 @@
+
+
+<!-- <form action="/users/:id" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="username">Username:</label>
+  <input type="text" name="user[username]" id="name">
+  
+  <label for="email">Email:</label>
+  <input type="text" name="user[email]" id="email">
+  
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" id="password">
+  
+  <input name="commit" type="submit" value="Edit">
+  </form> 
+
+
+
+<%= form_tag("/users/:id", method: "post") do %>
+<%= label_tag(:username, "Enter Username") %>
+<%= text_field_tag(:username) %>
+<%= label_tag(:password, "Password") %>
+<%= password_field_tag(:password) %>
+<%= label_tag(:email, "email") %>
+<%= email_field_tag(:email) %>
+<%= submit_tag("Edit") %>
+<% end %>
+-->
+
+<div class="form_wrap">
+  <h1>Edit User</h1>
+
+  <%= form_for @user, url: user_path do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label :username, "Edit Username"%>
+    <%= f.text_field :username, placeholder: "Type username"%>
+    
+    <%= f.label :password, "Edit Password"%>
+    <%= f.password_field :password, placeholder: "password" %>
+    
+    <%= f.label :email, "Edit Email"%>
+    <%= f.email_field :email, placeholder: "you@mail.com"%>
+    
+    <%= f.submit "Edit" %>
+  <% end %>
+</div>
