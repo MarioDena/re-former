@@ -1,24 +1,27 @@
-# README
+# Project-Forms
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+“This is part of the Forms Project in The Odin Project’s Ruby on Rails Curriculum. Find it at http://www.theodinproject.com”
 
-Things you may want to cover:
+Build with love and passion for coding :heartbeat:
 
-* Ruby version
+# Getting Started
 
-* System dependencies
+Just clone the repo and run `Rails s` command and go to `localhost:3000/users/new`
 
-* Configuration
+After creating a user you can go to `localhost:3000/users/[id]/edit` and edit an existing one
 
-* Database creation
+# Created by
 
-* Database initialization
+Ukeje Michgolden  https://github.com/mikenath223 
 
-* How to run the test suite
+Mario Dena https://github.com/mariodena
 
-* Services (job queues, cache servers, search engines, etc.)
+# Dependencies
 
-* Deployment instructions
+Rails 6.0.2
 
-* ...
+Ruby 2.6.5
+
+# License
+
+This project is [MIT](lic.url) licensed.
